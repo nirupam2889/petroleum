@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.rak.smp</groupId>
+	<artifactId>petrolium</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>petrolium</name>
+	<url>http://petrolium.com</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.compiler.plugin>3.1</version.compiler.plugin>
+		<version.surefire.plugin>2.16</version.surefire.plugin>
+		<version.war.plugin>2.5</version.war.plugin>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		 <aws-java-sdk.version>1.11.750</aws-java-sdk.version>
+
+		<skipTests>true</skipTests>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<commons-dbcp.version>1.3</commons-dbcp.version>
+		<spring.version>4.3.0.RELEASE</spring.version>
+		<spring-security.version>4.1.1.RELEASE</spring-security.version>
+		<hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
+		<hibernate.version>4.2.5.Final</hibernate.version>
+		<javax.transaction.version>1.1</javax.transaction.version>
+		<javax.persistence-api.version>1.0</javax.persistence-api.version>
+		<log4j.version>1.2.15</log4j.version>
+		<slf4j-log4j12.version>1.6.1</slf4j-log4j12.version>
+		<apachetiles.version>3.0.7</apachetiles.version>
+	</properties>
+
+	<dependencies>
+		<!-- spring dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-instrument</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>${aws-java-sdk.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- spring-data-jpa -->
+		<!-- <dependency> <groupId>org.springframework.data</groupId> <artifactId>spring-data-jpa</artifactId> 
+			<version>1.3.4.RELEASE</version> </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.11.6.RELEASE</version>
+		</dependency>
+
+		<!-- spring security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>4.0.3.RELEASE</version>
+	    </dependency>
+	    
+	  
+	
+       <!-- json jar download -->
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+
+		<!-- gson jar download -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- mysql driver -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.25</version>
+</dependency>
+
+
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>${javax.transaction.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
+
+		<!-- BasicDataSource -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons-dbcp.version}</version>
+		</dependency>
+
+		<!-- hibernate dependencies -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		    <version>2.3.0</version>
+		</dependency>
+
+		<!-- hibernate validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+
+		<!-- file handling -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.3</version>
+		</dependency>
+		<!--util features like base64 -->
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
+
+		<!-- java mail api -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<!-- standard.jar -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+
+		<!-- JSTL -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+    <groupId>org.javassist</groupId>
+    <artifactId>javassist</artifactId>
+    <version>3.18.2-GA</version>
+</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-log4j12.version}</version>
+		</dependency>
+
+		<!-- xss security -->
+		<dependency>
+			<groupId>org.owasp.antisamy</groupId>
+			<artifactId>antisamy</artifactId>
+			<version>1.4.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.owasp.esapi</groupId>
+			<artifactId>esapi</artifactId>
+			<version>2.1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.6</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Data binding -->
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+
+		<!--Excel -->
+		<!-- excel upload end -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<!-- excel upload end -->
+		<!-- Jasper Report -->
+		<dependency>
+		   <groupId>net.sf.jasperreports</groupId>
+		   <artifactId>jasperreports</artifactId>
+		   <version>6.1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-fonts -->
+		<dependency>
+		   <groupId>net.sf.jasperreports</groupId>
+		   <artifactId>jasperreports-fonts</artifactId>
+		   <version>6.0.0</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+    <scope>provided</scope>
+</dependency>
+
+<!-- pdf -->
+<dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>itext7-core</artifactId>
+        <version>7.1.9</version>
+        <type>pom</type>
+    </dependency>
+
+    <!-- iText pdfHTML add-on -->
+    <dependency>
+	    <groupId>com.itextpdf</groupId>
+	    <artifactId>html2pdf</artifactId>
+	    <version>2.1.6</version>
+	</dependency>
+		<dependency>
+	        <groupId>org.codehaus.groovy</groupId>
+	        <artifactId>groovy-all</artifactId>
+	        <version>1.7.5</version>
+        </dependency>
+
+		<!-- End Jasper Report -->
+		<!-- javamelody-core -->
+		<dependency>
+			<groupId>net.bull.javamelody</groupId>
+			<artifactId>javamelody-core</artifactId>
+			<version>1.45.0</version>
+		</dependency><!-- itext, option to add PDF export -->
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>bcmail-jdk14</artifactId>
+					<groupId>bouncycastle</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>bcprov-jdk14</artifactId>
+					<groupId>bouncycastle</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>bctsp-jdk14</artifactId>
+					<groupId>bouncycastle</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>0.7.8</version>
+		</dependency>
+		
+			<!-- Apache Tiles -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${apachetiles.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-api</artifactId>
+			<version>${apachetiles.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>${apachetiles.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${apachetiles.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<!-- Jwt token -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.sun/tools -->
+
+<dependency>
+    <groupId>com.github.librepdf</groupId>
+    <artifactId>openpdf</artifactId>
+    <version>1.3.8</version>
+</dependency>
+		<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-math3</artifactId>
+    <version>3.5</version>
+</dependency>
+		<dependency>
+  <groupId>javax.annotation</groupId>
+  <artifactId>javax.annotation-api</artifactId>
+  <version>1.3.2</version>
+</dependency>
+	<!--tiles end  -->
+
+         <dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
+			<!-- <scope>compile</scope> -->
+        </dependency>
+		
+		<!-- Google Oauth api -->
+		<dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>com.google.code.gson</groupId> -->
+<!--             <artifactId>gson</artifactId> -->
+<!--             <version>2.7</version> -->
+<!--         </dependency> -->
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client-jackson</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-oauth2</artifactId>
+            <version>v2-rev120-1.22.0</version>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>com.google.api-client</groupId> -->
+<!--             <artifactId>google-api-client</artifactId> -->
+<!--             <version>1.22.0</version> -->
+<!--         </dependency> -->
+<dependency>
+  <groupId>org.apache.httpcomponents</groupId>
+  <artifactId>httpclient</artifactId>
+  <version>4.5.2</version>
+ </dependency>
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-plus</artifactId>
+            <version>v1-rev453-1.22.0</version>
+        </dependency>
+		<!-- Google Oauth api -->	
+		<!-- https://mvnrepository.com/artifact/org.jdom/jdom -->
+<dependency>
+    <groupId>org.jdom</groupId>
+    <artifactId>jdom</artifactId>
+    <version>1.1.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.13.1</version>
+</dependency>
+
+
+		
+	</dependencies>
+	
+
+	<build>
+		<!-- Maven will append the version to the finalName (which is the name 
+			given to the generated war, and hence the context root) -->
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${version.war.plugin}</version>
+				<configuration>
+					<!-- Java EE 7 doesn't require web.xml, Maven needs to catch up! -->
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<description>Social Ambassador project helps students for learning, and for choosing correct carrier path</description>
+	<organization>
+		<name>Mahindra and Mahindra</name>
+		<url>https://www.mahindra.com</url>
+	</organization>
+</project>
